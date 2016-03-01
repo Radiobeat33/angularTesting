@@ -24,6 +24,7 @@ describe('sampleViewController', function(){
             scope.currentNum = 5;
             scope.multiplier5(scope.currentNum);
             expect(scope.currentResult).toEqual(25);
+            expect(scope.currentResult).not.toBe(null);
         })
     });
 
@@ -32,14 +33,16 @@ describe('sampleViewController', function(){
             scope.currentNum = 'A';
             scope.multiplier5(scope.currentNum);
             expect(scope.currentResult).toBeFalsy();
+            expect(scope.currentResult).not.toBe(null);
         })
     });
 
     describe('multiplication test with no value', function(){
-        it('should return nothing',  function(){
+        it('should also return nothing',  function(){
             scope.currentNum = '';
             scope.multiplier5(scope.currentNum);
             expect(scope.currentResult).toBeFalsy();
+            expect(scope.currentResult).not.toBe(null);
         })
     });
 
@@ -48,6 +51,7 @@ describe('sampleViewController', function(){
             scope.currentNum = 0;
             scope.multiplier5(scope.currentNum);
             expect(scope.currentResult).toEqual(0);
+            expect(scope.currentResult).not.toBe(null);
         })
     });
 
